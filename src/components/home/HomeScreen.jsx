@@ -13,7 +13,6 @@ const fetchBlogs = async (topic) => {
   return query
 }
 export default function HomeScreen() {
-  const { topics } = useContext(AppContext)
 
   return (
     <div className='w-full h-full   bg-[#212121] '>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import {RouterProvider,  createBrowserRouter } from 'react-router-dom'
+import {RouterProvider,  createBrowserRouter,HashRouter } from 'react-router-dom'
 import Contact from './components/contact/Contact'
 import BlogView from './components/blog/BlogView'
 import AppContext from './Context/AppContext'
@@ -59,7 +59,6 @@ function Provider({ topics, currentTopic, setCurrentTopic, onScroll, setOnScroll
       <RouterProvider router={appRouter} />
     </AppContext.Provider>
   )
-
 }
 
 export default App
