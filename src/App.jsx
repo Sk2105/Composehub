@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import {RouterProvider,  createBrowserRouter,HashRouter } from 'react-router-dom'
+import {RouterProvider,  createBrowserRouter,HashRouter, Routes, Route, Router } from 'react-router-dom'
 import Contact from './components/contact/Contact'
 import BlogView from './components/blog/BlogView'
 import AppContext from './Context/AppContext'
@@ -18,7 +18,7 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>404</div>,
+    element: <HomeScreen />,
   },
   {
     path: "/:path",
@@ -56,7 +56,14 @@ function App() {
 function Provider({ topics, currentTopic, setCurrentTopic, onScroll, setOnScroll }) {
   return (
     <AppContext.Provider value={{ topics, currentTopic, setCurrentTopic, onScroll, setOnScroll }}>
-      <RouterProvider router={appRouter} />
+     <HashRouter>
+      <Routes>
+        <Route path='/' Component={HomeScreen} />
+        <Route path='/contact' Component={Contact} />
+        <Route path='/:path' Component={BlogView} />
+        <Route path='*' Component={HomeScreen} />
+      </Routes>
+     </HashRouter>
     </AppContext.Provider>
   )
 }
