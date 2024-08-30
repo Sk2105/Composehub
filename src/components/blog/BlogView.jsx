@@ -56,7 +56,7 @@ export default function BlogView() {
         <meta name="keywords" content={`${blogTitle}, Programming, Languages, Education, Composehub, C Language, Java, Python`} />
       </Helmet>
       <nav className='w-full p-3 h-fit bg-black flex items-center border-b-2 border-gray-400/20 justify-items-start'>
-        <Link to='/'><SlArrowLeftCircle className=' text-white w-6 h-6 m-1 hover:bg-gray-400/20 rounded-3xl' /></Link>
+        <Link to='/'><SlArrowLeftCircle className=' text-white w-6 h-6 m-1 hover:bg-gray-400/20 rounded-3xl'  /></Link>
         <h1 className='text-white text-sm sm:text-xs md:text-xl m-1'>{path}</h1>
       </nav>
       <div className='w-full h-fit bg-black pe-2 ps-2 md:pe-4 md:ps-4'>
