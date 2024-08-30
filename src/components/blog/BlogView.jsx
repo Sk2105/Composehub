@@ -9,6 +9,7 @@ import { useContext } from 'react'
 import Feedback from '../common/Feedback';
 import Footer from '../common/Footer';
 import HashLoader from "react-spinners/HashLoader";
+import { Helmet } from 'react-helmet';
 
 export default function BlogView() {
   const { currentTopic, setCurrentTopic } = useContext(AppContext)
@@ -49,6 +50,11 @@ export default function BlogView() {
 
   return (
     <div className='w-full h-fit  flex flex-col bg-black' >
+      <Helmet>
+        <title>{blogTitle}</title>
+        <meta name="description" content="Explore Programming and much more at Composehub" />
+        <meta name="keywords" content={`${blogTitle}, Programming, Languages, Education, Composehub, C Language, Java, Python`} />
+      </Helmet>
       <nav className='w-full p-3 h-fit bg-black flex items-center border-b-2 border-gray-400/20 justify-items-start'>
         <Link to='/'><SlArrowLeftCircle className=' text-white w-6 h-6 m-1 hover:bg-gray-400/20 rounded-3xl' /></Link>
         <h1 className='text-white text-sm sm:text-xs md:text-xl m-1'>{path}</h1>
